@@ -7,13 +7,16 @@ const rootDir = require('./utils/path');
 const port = 4000;
 const app = express();
 
-const adminRouters = require('./routes/admin');
+app.set('view engine', 'pug');
+app.set('views', 'views');
+
+const adminData = require('./routes/admin');
 const shopRouters = require('./routes/shop');
 
 app.use(bodyParser.urlencoded())
 
 // Routing
-app.use('/admin', adminRouters);
+app.use('/admin', adminData.routes);
 app.use(shopRouters);
 
 // Accesing External file system
