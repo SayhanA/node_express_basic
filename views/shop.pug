@@ -5,6 +5,7 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title #{docTitle}
     link(rel="stylesheet", href="/css/main.css")
+    link(rel="stylesheet", href="/css/shop.css")
   body
     header
       nav
@@ -16,4 +17,14 @@ html(lang="en")
     main
       h1 My Products.
       p List of all the products ...
+
+      .card_container
+        each products in prods
+          article.card
+            img(src="https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1722643200&semt=sph" alt="Book")
+            .card_content
+              header #{products.title}
+              p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia quos impedit temporibus ipsum...
+              button(type="button") Read
+
   script(src="/js/nav.js")
